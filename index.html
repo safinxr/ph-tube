@@ -13,31 +13,68 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-          <!-- ==================== navbar ========================= -->
+    <!-- ==================== navbar ========================= -->
     <nav class="container mx-auto">
       <div class="navbar bg-base-100 py-6">
         <div class="navbar-start">
           <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
             </label>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
               <li><a>Sort by view</a></li>
-              
             </ul>
           </div>
-          <a class="btn btn-ghost navbar-center"><img class="w-2/3 md:w-full" src="./img/Logo.png" alt=""></a>
+          <a class="btn btn-ghost navbar-center"
+            ><img class="w-2/3 md:w-full" src="./img/Logo.png" alt=""
+          /></a>
         </div>
         <div class="navbar-center hidden lg:flex">
-            <button class="btn ">Sort by view</button>
+          <button class="btn">Sort by view</button>
         </div>
         <div class="navbar-end">
-          <a target="_blank" href="./blog.html" class="btn btn-sm md:btn-md">Blog</a>
+          <a target="_blank" href="./blog.html" class="btn btn-sm md:btn-md"
+            >Blog</a
+          >
         </div>
       </div>
-      <hr>
+      <hr />
     </nav>
+    <!-- ----------------------- main ---------------------- -->
+    <main>
+      <!-- ====================content navbar=============== -->
+      <section class="container mx-auto px-4 my-10">
+        <div
+          id="content-navbar"
+          class="flex justify-center items-center gap-6 flex-wrap"
+        ></div>
+        <!--=============== content div=========== -->
+        <div
+          id="content-div"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16"
+        >
+          
+        </div>
+      </section>
+    </main>
 
     <script src="index.js"></script>
   </body>
 </html>
+<!-- <div class="badge badge-secondary">NEW</div> -->
