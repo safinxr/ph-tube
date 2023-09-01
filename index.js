@@ -3,20 +3,26 @@ const fetchContentNav = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories')
     const data = await res.json();
     data.data.forEach(data => {
-        const navBtn = document.createElement('button');
-        navBtn.innerText = `${data.category}`;
-        navBtn.classList = 'btn px-8 normal-case';
-        contentNavDiv.appendChild(navBtn)
+        const navBtnDiv = document.createElement('div');
+        navBtnDiv.innerHTML = `
+        <button onclick=showContent(${data.category_id}) class="btn px-8 normal-case">${data.category}</button>
+        `;
+        contentNavDiv.appendChild(navBtnDiv)
     })
+
 
 }
 fetchContentNav();
 
-const showContent = async () => {
+const showContent = async (id) => {
     const contentDiv = document.getElementById('content-div');
-    const res = await fetch('https://openapi.programming-hero.com/api/videos/category/1000')
+    const noDataDiv = document.getElementById('no-data');
+    contentDiv.innerHTML='';
+    noDataDiv.innerHTML='';
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
     const data = await res.json();
-    data.data.forEach(data => {
+    if(data.status){
+      data.data.forEach(data => {
         const card = document.createElement('div');
         card.innerHTML = `
 
@@ -50,10 +56,21 @@ const showContent = async () => {
         contentDiv.appendChild(card);
 
     })
+    }
+    else{
+      const noData = document.createElement('div');
+        noData.innerHTML =`
+        <img src="./img/Icon.png">
+        <h2 class="text-4xl font-bold text-center">Oops!! Sorry, There is no <br> content here</h2>
+        `
+        noData.classList='flex justify-center items-center flex-col h-[50vh]';
+        noDataDiv.appendChild(noData);
+    }
+    
 
 
 }
 
-showContent();
+showContent(1000);
 
 

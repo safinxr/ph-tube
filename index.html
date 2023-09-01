@@ -38,7 +38,10 @@
               tabindex="0"
               class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li><a>Sort by view</a></li>
+            <label class="label cursor-pointer">
+              <span class="font-medium bg-gray-200">Sort by view</span> 
+              <input type="checkbox" checked="checked" class="checkbox" />
+            </label>
             </ul>
           </div>
           <a class="btn btn-ghost navbar-center"
@@ -46,10 +49,13 @@
           /></a>
         </div>
         <div class="navbar-center hidden lg:flex">
-          <button class="btn">Sort by view</button>
+          <label class="label cursor-pointer">
+            <span class="font-medium bg-gray-100 px-5 py-3 rounded-md">Sort by view</span> 
+            <input type="checkbox" checked="checked" class="checkbox" />
+          </label>
         </div>
         <div class="navbar-end">
-          <a target="_blank" href="./blog.html" class="btn btn-sm md:btn-md"
+          <a target="_blank" href="./blog.html" class="btn btn-sm bg-[#FF1F3D] text-white md:btn-md"
             >Blog</a
           >
         </div>
@@ -71,8 +77,13 @@
         >
           
         </div>
+        <div id="no-data" >
+
+        </div>
       </section>
     </main>
+
+    
 
     <script src="index.js"></script>
   </body>
