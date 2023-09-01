@@ -36,8 +36,13 @@ const showContent = async () => {
                 </div>
                 <h2 class="card-title ms-4">${data.title}</h2>
               </div>               
-              <p class="ms-14">${data.authors[0].profile_name} <br>${data.others.views} views
-              </p>
+              <h2 class="card-title ms-14 font-normal text-base">
+              ${data.authors[0].profile_name} 
+              ${data.authors[0].verified?`<img src='/img/fi.svg'>`:''}
+                
+              </h2>
+              <p class="ms-14">${data.others.views} views</p>
+              
               
             </div>
         `;
